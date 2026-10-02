@@ -6,5 +6,5 @@ void main(){
   Triangulo unTriangulo = Triangulo();
 
   unTriangulo.obtenerArea();
-  print('area de triangulo: $unTriangulo.area')
+  print('area de triangulo: $unTriangulo.area');
 }
