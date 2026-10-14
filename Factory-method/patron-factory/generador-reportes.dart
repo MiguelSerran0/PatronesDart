@@ -1,35 +1,20 @@
 import 'documento.dart';
-import 'documento-texto.dart';
-import 'documento-Json.dart';
-import 'documento-excel.dart';
 
-class GeneradorReportes {
+abstract class GeneradorReportes {
+  Documento crearDocumento();
   
-  void generarReporte(String formato, List<int> calificaciones){
+  void generarReporte(List<int> calificaciones){
     if (calificaciones.isEmpty) {
       throw ArgumentError('El reporte necesita una lista de calificaciones');
     }
 
-    //Este objeto conoce todas las implementaciones concretas 
-    Documento documento;
+    final documento = crearDocumento();
 
-    switch ( formato ) {
-      case 'texto':
-        documento = DocumentoTexto();
-        break;
-      case 'json':
-        documento = DocumentoJson();
-        break;
-      case 'excel':
-        documento = DocumentoExcel();
-      default:
-        throw ArgumentError('Formato inválido: $formato');
+    print(documento.generar(calificaciones));
+    print('Reporte generado correctamente');
+      
     }
 
-    print( documento.generar(calificaciones));
-    print('Reporte generado correctamente');
+} 
 
-
-  }
-
-      }
+  
