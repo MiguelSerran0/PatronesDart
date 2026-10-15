@@ -8,4 +8,4 @@ class GeneradorTexto extends GeneradorReportes{
   Documento crearDocumento() {
     return DocumentoTexto();
   }
-  }
+}
