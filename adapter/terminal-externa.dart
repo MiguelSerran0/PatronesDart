@@ -1,7 +1,7 @@
-//Simulacion de un libreria externa
-//Esta clase no puede ser modificada
+// Simulación de una librería externa
+// Esta clase no puede ser modificada
 class TerminalExterna {
-  void cobrar(double, dolares){
-    print('Terminal externa: cobro de ${dolares} dolares');
+  void cobrar(double dolares) {
+    print('Terminal externa: cobro de ${dolares} dólares');
   }
 }
